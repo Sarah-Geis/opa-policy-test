@@ -1,0 +1,16 @@
+clusters:
+  - sg-test
+parameters:
+  blocklist:
+    - insights-agent
+  repos:
+    - example.com
+runEnvironments:
+  - Agent
+targets:
+  - apiGroups:
+      - apps
+    kinds:
+      - Deployment
+      - Statefulset
+      - CronJob
