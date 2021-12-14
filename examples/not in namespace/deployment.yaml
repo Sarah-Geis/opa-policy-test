@@ -1,0 +1,24 @@
+clusters:
+  - sales-cluster
+  - sg-test
+parameters:
+  blocklist:
+    - kube-system
+  namespace:
+    - default
+runEnvironments:
+  - Admission
+  - CI
+  - Agent
+targets:
+  - apiGroups:
+      - apps
+    kinds:
+      - DaemonSet
+      - Deployment
+      - StatefulSet
+  - apiGroups:
+      - batch
+    kinds:
+      - CronJob
+      - Job
